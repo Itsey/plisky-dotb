@@ -1,0 +1,15 @@
+﻿@{
+    ViewData["Title"] = "Maintain";
+}
+<h1>@ViewData["Maintain"]</h1>
+
+<h1>Maintenance</h1>
+
+
+@model dotb.Portal.AddGlitterVM
+<form asp-action="Maintenance" enctype="multipart/form-data">
+    
+    <input asp-for="GlitterData" />
+
+    <input type="submit" />
+</form>

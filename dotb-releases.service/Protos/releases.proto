@@ -1,0 +1,44 @@
+syntax = "proto3";
+
+option csharp_namespace = "dotb.releases";
+
+import "google/protobuf/timestamp.proto";
+
+package release;
+
+// The greeting service definition.
+service Release {
+  // Sends a greeting
+  rpc PerformRelease (ReleaseRequest) returns (ServiceResponse);
+  rpc AddSystem (AddSystemRequest) returns (ServiceResponse);
+  rpc AddComponent (AddComponentRequest) returns (ServiceResponse);
+}
+
+// The request message containing the user's name.
+message ReleaseRequest {
+  string name = 1;
+  string environment =2;
+  string version = 3;
+  string releaseName =4;
+  string componentLink = 5;
+  google.protobuf.Timestamp releaseDate = 6;
+  repeated string affectedComponents = 7;
+}
+
+message AddSystemRequest {    
+    string owner = 1;
+    string name = 2;
+    string externalIdentifier = 3;
+    bool addDefaultComponent = 4;
+}
+
+message AddComponentRequest {    
+    string componentName = 1;
+    string systemKey = 2;
+}
+
+message ServiceResponse {
+	bool success = 1;
+	int32 error_code = 2;
+    string uid = 3;
+}

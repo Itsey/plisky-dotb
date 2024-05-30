@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+option csharp_namespace = "dotb_glitter.service";
+import "google/protobuf/timestamp.proto";
+
+package greet;
+
+
+service DotbGlitter {
+
+  rpc AddRepository (AddRepositoryRequest) returns (ServiceResponse);
+  rpc SubmitGlitterReport ( AddGlitterReportRequest ) returns (ServiceResponse);
+}
+
+message AddGlitterReportRequest {
+  string report_filename = 1;
+  bytes file_contents = 2; 
+  google.protobuf.Timestamp gather_date = 5;
+}
+message AddRepositoryRequest {
+  string name = 1;
+}
+
+message ServiceResponse {
+	bool success = 1;
+	int32 error_code = 2;
+    string uid = 3;
+}

@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <IsAspireHost>true</IsAspireHost>
+    <UserSecretsId>1daf4184-8280-4969-93e7-288abf0d2045</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\dotb-glitter.service\dotb-glitter.service.csproj" />
+    <ProjectReference Include="..\dotb-portal\dotb-portal.csproj" />
+    <ProjectReference Include="..\dotb-releases.service\dotb-releases.service.csproj" />
+    <ProjectReference Include="..\dotb.ApiService\dotb.ApiService.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Aspire.Hosting.AppHost" Version="8.0.1" />
+  </ItemGroup>
+
+</Project>

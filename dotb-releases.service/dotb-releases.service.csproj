@@ -1,0 +1,30 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <RootNamespace>dotb.releases</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Protobuf Include="Protos\releases.proto" GrpcServices="Server" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Grpc.AspNetCore" Version="2.63.0" />
+    <PackageReference Include="Grpc.AspNetCore.Server.Reflection" Version="2.63.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.4">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.4" />
+    <PackageReference Include="Plisky.Diagnostics" Version="3.2.1" />
+    <PackageReference Include="Plisky.Plumbing" Version="1.8.14" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\dotb.ServiceDefaults\dotb.ServiceDefaults.csproj" />
+  </ItemGroup>
+
+</Project>

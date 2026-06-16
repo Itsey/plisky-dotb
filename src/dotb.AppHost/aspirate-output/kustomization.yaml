@@ -1,0 +1,14 @@
+namespace: dotb-1100
+
+resources:
+- apiservice
+- dotb-portal
+- dotb-glitter-service
+- dotb-releases-service
+- namespace.yaml
+- dashboard.yaml
+
+generatorOptions:
+  disableNameSuffixHash: true
+
+

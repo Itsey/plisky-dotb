@@ -1,0 +1,9 @@
+{
+  "TemplatePath": null,
+  "ContainerSettings": {
+    "Tags": [
+      "latest"
+    ],
+    "Builder": "docker"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "projectPath": ".",
+  "outputPath": "aspirate-output",
+  "namespace": "dotb-1100",
+  "containerRegistry": "itseyreg.azurecr.io",
+  "containerImageTags": [
+    "latest",
+    "1.0n"
+  ],
+  "containerBuilder": "docker",
+  "kubeContext": "docker-desktop",
+  "outputFormat": "kustomize",
+  "disableSecrets": true,
+  "skipFinalKustomizeGeneration": false,
+  "privateRegistryEmail": "aspir8@aka.ms",
+  "useCustomNamespace": true,
+  "processAllComponents": true,
+  "isRunning": true
+}

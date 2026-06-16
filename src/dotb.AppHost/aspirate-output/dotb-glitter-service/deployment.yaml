@@ -1,0 +1,31 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dotb-glitter-service
+  labels:
+    app: dotb-glitter-service
+spec:
+  minReadySeconds: 60
+  replicas: 1
+  selector:
+    matchLabels:
+      app: dotb-glitter-service
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: dotb-glitter-service
+    spec:
+      containers:
+      - name: dotb-glitter-service
+        image: itseyreg.azurecr.io/dotb-glitter-service:latest
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 8080
+        - containerPort: 8443
+        envFrom:
+        - configMapRef:
+            name: dotb-glitter-service-env
+      terminationGracePeriodSeconds: 180

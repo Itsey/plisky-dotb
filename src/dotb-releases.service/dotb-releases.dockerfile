@@ -11,6 +11,7 @@ RUN dotnet restore
 # Copy the rest of the working directory contents into the container at /app.
 COPY . ./
 
+
 # Build the application
 RUN dotnet publish -c Release -o out
 
@@ -18,9 +19,11 @@ RUN dotnet publish -c Release -o out
 FROM mcr.microsoft.com/dotnet/aspnet:8.0-noble-chiseled
 WORKDIR /app
 COPY --from=build-env /app/out .
+COPY dotb_releases.donotcommit .
 
 # Expose port 80
-EXPOSE 80
+EXPOSE 8080
+EXPOSE 8443
 
 # Run the application
-ENTRYPOINT ["dotnet", "YourApplication.dll"]
+ENTRYPOINT ["dotnet", "dotb-releases.service.dll"]

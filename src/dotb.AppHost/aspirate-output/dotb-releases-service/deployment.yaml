@@ -1,0 +1,31 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dotb-releases-service
+  labels:
+    app: dotb-releases-service
+spec:
+  minReadySeconds: 60
+  replicas: 1
+  selector:
+    matchLabels:
+      app: dotb-releases-service
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: dotb-releases-service
+    spec:
+      containers:
+      - name: dotb-releases-service
+        image: itseyreg.azurecr.io/dotb-releases-service:latest
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 8080
+        - containerPort: 8443
+        envFrom:
+        - configMapRef:
+            name: dotb-releases-service-env
+      terminationGracePeriodSeconds: 180

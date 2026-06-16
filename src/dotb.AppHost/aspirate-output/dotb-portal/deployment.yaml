@@ -1,0 +1,31 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dotb-portal
+  labels:
+    app: dotb-portal
+spec:
+  minReadySeconds: 60
+  replicas: 1
+  selector:
+    matchLabels:
+      app: dotb-portal
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: dotb-portal
+    spec:
+      containers:
+      - name: dotb-portal
+        image: itseyreg.azurecr.io/dotb-portal:latest
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 8080
+        - containerPort: 8443
+        envFrom:
+        - configMapRef:
+            name: dotb-portal-env
+      terminationGracePeriodSeconds: 180

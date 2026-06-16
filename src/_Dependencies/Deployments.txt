@@ -1,0 +1,6 @@
+﻿aspirate generate -cr itseyreg.azurecr.io -ct 1.0
+
+
+this seemed to work:
+aspirate build -cr itseyreg.azurecr.io -ct 1.0 --disable-secrets --non-interactive 
+

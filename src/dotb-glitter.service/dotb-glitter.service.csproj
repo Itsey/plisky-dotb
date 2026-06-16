@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
@@ -6,15 +6,16 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <UserSecretsId>bedf49d8-a13d-43f9-bf18-49dce36b5eef</UserSecretsId>
     <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+	<ContainerBaseImage>mcr.microsoft.com/dotnet/aspnet:8.0-noble-chiseled</ContainerBaseImage>
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Include="..\..\plisky-glitter\src\glitter-report\GitRepoStatus.cs" Link="Repository\External\GitRepoStatus.cs" />
-    <Compile Include="..\..\plisky-glitter\src\glitter-report\ReportAuthorInfo.cs" Link="Repository\External\ReportAuthorInfo.cs" />
-    <Compile Include="..\..\plisky-glitter\src\glitter-report\ReportCommit.cs" Link="Repository\External\ReportCommit.cs" />
-    <Compile Include="..\..\plisky-glitter\src\glitter-report\ReportPayload.cs" Link="Repository\External\ReportPayload.cs" />
-    <Compile Include="..\..\plisky-glitter\src\glitter-report\ReportRepoFile.cs" Link="Repository\External\ReportRepoFile.cs" />
-    <Compile Include="..\..\plisky-glitter\src\glitter-report\ReportRepository.cs" Link="Repository\External\ReportRepository.cs" />
+    <Compile Include="..\..\..\plisky-glitter\src\glitter-report\GitRepoStatus.cs" Link="Repository\External\GitRepoStatus.cs" />
+    <Compile Include="..\..\..\plisky-glitter\src\glitter-report\ReportAuthorInfo.cs" Link="Repository\External\ReportAuthorInfo.cs" />
+    <Compile Include="..\..\..\plisky-glitter\src\glitter-report\ReportCommit.cs" Link="Repository\External\ReportCommit.cs" />
+    <Compile Include="..\..\..\plisky-glitter\src\glitter-report\ReportPayload.cs" Link="Repository\External\ReportPayload.cs" />
+    <Compile Include="..\..\..\plisky-glitter\src\glitter-report\ReportRepoFile.cs" Link="Repository\External\ReportRepoFile.cs" />
+    <Compile Include="..\..\..\plisky-glitter\src\glitter-report\ReportRepository.cs" Link="Repository\External\ReportRepository.cs" />
   </ItemGroup>
 
   <ItemGroup>
